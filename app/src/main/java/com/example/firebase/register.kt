@@ -1,5 +1,6 @@
 package com.example.firebase
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -18,7 +19,11 @@ class register: AppCompatActivity() {
         setContentView(R.layout.register)
 
         val binding: RegisterBinding = DataBindingUtil.setContentView(this, R.layout.register)
-auth= FirebaseAuth.getInstance()
+        binding.lognow.setOnClickListener {
+            val intent = Intent(this, login::class.java)
+            startActivity(intent)
+        }
+        auth= FirebaseAuth.getInstance()
         binding.bRegister.setOnClickListener {
             val email=binding.emaill.text.toString();
             val password=binding.pwd.text.toString()
@@ -41,6 +46,9 @@ auth= FirebaseAuth.getInstance()
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         showToast("Successful login")
+                        val intent = Intent(this, login::class.java)
+                        startActivity(intent)
+                        finish()
 
                     } else {
 

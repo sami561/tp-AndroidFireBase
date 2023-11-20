@@ -1,5 +1,6 @@
 package com.example.firebase
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,13 @@ class login  : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
+
         val binding: LoginBinding= DataBindingUtil.setContentView(this, R.layout.login)
+
+        binding.regnow.setOnClickListener {
+            val intent = Intent(this, register::class.java)
+            startActivity(intent)
+        }
         var auth = FirebaseAuth.getInstance()
         binding.bLogin.setOnClickListener{
             val email=binding.emaill.text.toString();
@@ -38,7 +45,9 @@ class login  : AppCompatActivity(){
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         showToast("login Successfuly")
-
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     } else {
                         // If sign in fails, display a message to the user.
 
