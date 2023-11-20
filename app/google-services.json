@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766385099303",
+    "project_id": "authtp-d22e6",
+    "storage_bucket": "authtp-d22e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766385099303:android:63a3c9109a39ee4b023402",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiaLANnsXTwlEKqmE1-v1jAxaaT3HyAAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
